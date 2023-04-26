@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Center the spinner */
+        .spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-left: -25px; /* Half of the spinner width */
+            margin-top: -25px; /* Half of the spinner height */
+        }
+        
+        /* Hide the spinner by default */
+        .spinner.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Optimal Path for {{ city }}, {{ country }}</h1>
+    <div id="spinner" class="spinner hidden">
+        <!-- Replace this with your own spinner -->
+        <img src="https://www.w3schools.com/howto/img_spinner.gif">
+    </div>
+    <div id="result">
+        <!-- The result will be inserted here -->
+        Data Collected <br>
+        city: {{ city }} <br>
+        country: {{ country }} <br>
+        The Order of visiting places is: <br>
+        {% for place in orderList %}
+            <li>{{ place }}</li>
+        {% endfor %}
+    </div>
+    
+    <script>
+        // Show the spinner when the page is first loaded
+        document.getElementById('spinner').classList.remove('hidden');
+        
+        // Hide the spinner once the page has finished loading
+        window.onload = function() {
+            document.getElementById('spinner').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
+
+    
+    
