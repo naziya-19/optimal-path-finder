@@ -3,6 +3,9 @@ import optimalPath.distanceMatrix
 import optimalPath.matrixMlrose
 import optimalPath.TSP
 import optimalPath.stringToList
+import optimalPath.geocodeMapPath
+import optimalPath.jsonToGeojson
+import optimalPath.mapping                                                                                                                                                                                                                                                                                                                                              
 
 #Places,Pincode,City,State,Country
 
@@ -38,6 +41,12 @@ def pathGenerator(Country,State,City,placesString):
     orderstring = orderstring +  str(codesList[0][0])+", "+str(codesList[0][1])+"; " 
 
     orderstring = orderstring[:(len(orderstring)-2)]
+
+    optimalPath.geocodeMapPath.geoCodeMapPath(orderstring)
+
+    optimalPath.jsonToGeojson.jsonToGeojson()
+
+    optimalPath.mapping.mapping(orderstring,orderList,placesList)
 
     return placesList, orderstring, orderList
 

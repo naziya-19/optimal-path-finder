@@ -1,6 +1,6 @@
 import optimalPath.pathGenerator
 
-stringlist = "MG Road , 411003 , Sarasbaug , 411030 , Shaniwar Wada , 411011 , Magarpatta city , 411013"
+stringlist = "East Street , 411001 , Sarasbaug , 411030 , Shaniwar Wada , 411011 , Magarpatta city , 411013"
 country = "India"
 state = "Maharastra"
 city = "Pune"

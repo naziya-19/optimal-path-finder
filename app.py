@@ -27,6 +27,8 @@ def output():
     state = request.form.get("state")
     placesString = request.form.get("places")
     placeslist,orderstring,orderlist = optimalPath.pathGenerator.pathGenerator(country,city,state,placesString)
-    return render_template("result.html",city=city,country=country,orderList=placeslist)
+    #return render_template("result.html",city=city,country=country,orderList=placeslist)
+    return render_template("map.html")
 
-# MG Road , 411003 , Sarasbaug , 411030 , Shaniwar Wada , 411011 , Magarpatta city , 411013
+
+# MG Road , 411001 , Sarasbaug , 411030 , Shaniwar Wada , 411011 , Magarpatta city , 411013

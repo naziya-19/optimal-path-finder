@@ -1,28 +1,18 @@
-import json 
+import folium
+import os
 
-input_file=json.load(open("./response.json", "r", encoding="utf-8"))
+def mapping(Points,Orderlist,Orderplaces):
 
-l = input_file["route"]["geometry"]["coordinates"]
-for i in range(len(l)):
-    l[i][0], l[i][1] = l[i][1], l[i][0]
-geojs={
-     "type": "FeatureCollection",
-     "features":[
-           {
-                "type":"Feature",
-                "properties":{},
-                "geometry": {
-                "coordinates":l,
-                "type":"LineString",
-            }
-         }
-    ]  
- }
+    points = Points
+    orderlist = Orderlist
+    orderplaces = Orderplaces
 
-# Serializing json
-json_object = json.dumps(geojs, indent=4)
- 
-# Writing to sample.json
-with open("geodata.json", "w") as outfile:
-    outfile.write(json_object)
+    map = folium.Map(location=orderlist[0], zoom_start=15)
 
+    walkdata = os.path.join('geodata.json')
+    folium.GeoJson(walkdata,smooth_factor=0.5).add_to(map)
+
+    for i in range(len(orderlist) - 1):
+        folium.Marker(orderlist[i], popup=orderplaces[i]).add_to(map)
+
+    map.save("./templates/map.html")
