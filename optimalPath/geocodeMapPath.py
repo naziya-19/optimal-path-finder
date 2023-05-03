@@ -1,8 +1,4 @@
 import requests
-import json
-import folium
-import os
-
 
 def geoCodeMapPath(stoplist):
     url = "https://trueway-directions2.p.rapidapi.com/FindDrivingRoute"

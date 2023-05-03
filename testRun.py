@@ -2,6 +2,8 @@ import optimalPath.geoCode2
 import optimalPath.distanceMatrix
 import optimalPath.matrixMlrose
 import optimalPath.TSP
+import optimalPath.stringToList
+import optimalPath.pathGenerator
 
 #Places,Pincode,City,State,Country
 
@@ -27,27 +29,15 @@ import optimalPath.TSP
 
 # print(dMatrix)
 
-dMatrix = [[0, 6481, 4909], [5188, 0, 7105], [4335, 7052, 0]]
+stringlist = "Kondhwa , 411048"
+country = "India"
+state = "Maharastra"
+city = "Pune"
+# places, pincodes=optimalPath.stringToList.stringToList(stringlist)
+# print(places," ",pincodes)
 
-mlroseMatrix = optimalPath.matrixMlrose.mlroseform(dMatrix)
+# print(optimalPath.geoCode2.geoCode(["Kondhwa"],['411048'],city,state,country))
+# places, pincodes=optimalPath.stringToList.stringToList(stringlist)
 
-print(mlroseMatrix)
-n = 3
-places = ['MG Road', 'Kondhwa', 'Sarasbaug']
-codes = "18.5121648, 73.8787887; 18.4712065, 73.8890164; 18.500494850000003, 73.85290370572457"
-codesList = [['18.5121648', '73.8787887'], ['18.4712065', '73.8890164'], ['18.500494850000003', '73.85290370572457']]
-
-bestState, bestfitness = optimalPath.TSP.path(mlroseMatrix,n)
-
-print(bestState)
-orderlist = str(codesList[0][0])+", "+str(codesList[0][1])+"; "
-for i in bestState:
-    print(places[i])
-    orderlist = orderlist + str(codesList[i][0])+", "+str(codesList[i][1])+"; "
-
-orderlist = orderlist[:(len(orderlist)-2)]
-
-print(orderlist)
-print(bestfitness)
-
+optimalPath.pathGenerator.pathGenerator(country,state,city,stringlist)
 

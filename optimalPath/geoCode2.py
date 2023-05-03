@@ -14,7 +14,6 @@ def geoCode(Places,Pincode,City,State,Country):
             "X-RapidAPI-Host": "forward-reverse-geocoding.p.rapidapi.com"
         }
         response = requests.request("GET", url, headers=headers, params=querystring)
-
         data = json.loads(response.text)[0]
         longitude = data['lon']
         latitude = data['lat']

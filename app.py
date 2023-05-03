@@ -31,4 +31,6 @@ def output():
     return render_template("map.html")
 
 
-# MG Road , 411001 , Sarasbaug , 411030 , Shaniwar Wada , 411011 , Magarpatta city , 411013
+# East Street , 411001 , Sarasbaug , 411030 , Shaniwar Wada , 411011 , Magarpatta city , 411013
+# IIT Bombay, 400076, Juhu Beach, 400049,Jio World Drive, 400051, Gateway of India 400001
+# Central Park, 10019, hudson river waterfront walkway, 07310, Statue of Liberty, 12754, Brooklyn Bridge, 11201, Empire State, 10001

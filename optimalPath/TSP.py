@@ -2,7 +2,6 @@ import six
 import sys
 sys.modules['sklearn.externals.six'] = six
 import mlrose
-import numpy as np
 
 def path(dist_list,length):
     # Initialize fitness function object using dist_list
