@@ -1,4 +1,4 @@
-# Optipath
+# OptiTrip
 Optimal pathfinding algorithms are used to help tourists plan their trips and navigate through new cities and areas. Most traveling-intensive industries (such as outside sales and delivery services) waste enormous amounts of time and money planning/driving routes every year. This project presents a heuristic algorithm to plan a travel itinerary and implemented it on a website. 
 
 ## System Architecture
